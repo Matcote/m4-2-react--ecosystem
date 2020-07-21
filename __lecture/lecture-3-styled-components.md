@@ -96,8 +96,12 @@ Convert the following inline styles to styled-components
 ```
 
 ```jsx
+const Wrapper = styled.div`
+  margin: 0 auto;
+  height: 300px;
+`;
 function App(props) {
-  return <div className="wrapper">Hello World</div>;
+  return <Wrapper>Hello World</Wrapper>;
 }
 ```
 
@@ -124,12 +128,25 @@ function App(props) {
 ```
 
 ```jsx
+const Button = styled.button`
+  color: tomato;
+  font-weight: bold;
+  padding: 20px;
+  &:hover,
+  &:focus {
+    transform: translateY(-3px);
+  }
+`;
+const I = styled.i`
+  width: 32px;
+  height: 32px;
+`;
 function IconButton(props) {
   return (
-    <button className="btn">
-      <i className="icon">{props.icon}</i>
+    <Button>
+      <I>{props.icon}</I>
       {props.children}
-    </button>
+    </Button>
   );
 }
 ```
@@ -155,12 +172,24 @@ function IconButton(props) {
 ```
 
 ```jsx
+const Paragraph = styled.p`
+  font-size: 18px;
+  line-height: 1.4;
+  color: #333;
+  strong {
+    color: red;
+  }
+  em {
+    color: #666;
+  }
+`;
+
 function FantasticStory(props) {
   return (
     <div>
-      <p className="paragraph">
+      <Paragraph>
         The <strong>quick</strong> red fox jumped over the <em>lazy</em> dog.
-      </p>
+      </Paragraph>
       <p>The end.</p>
     </div>
   );
@@ -172,9 +201,9 @@ function FantasticStory(props) {
 ### Global styles
 
 ```jsx
-import {createGlobalStyles} from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
-const GlobalStyles = createGlobalStyles`
+const GlobalStyles = createGlobalStyle`
   * {
     font-family: 'Lato', sans-serif;
   }
@@ -182,8 +211,8 @@ const GlobalStyles = createGlobalStyles`
   p {
     line-height: 1.3;
   }
-`
-
+`;
+export default GlobalStyles;
 // Used as a component
-<GlobalStyles />
+<GlobalStyles />;
 ```

@@ -83,19 +83,17 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App(props) {
   return (
     <Router>
-      <div>
-        <Switch>
-          <Route exact path="/">
-            <Homepage />
-          </Route>
-          <Route exact path="/shop/:itemId">
-            <ItemDetails />
-          </Route>
-          <Route>
-            <ErrorPage />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/">
+          <Homepage />
+        </Route>
+        <Route exact path="/shop/:itemId">
+          <ItemDetails />
+        </Route>
+        <Route>
+          <ErrorPage />
+        </Route>
+      </Switch>
     </Router>
   );
 }
@@ -120,6 +118,8 @@ import { Link } from "react-router-dom";
 # Question
 
 Why use `<Link to="...">` instead of `<a href="...">`?
+
+It doesnt reload the page, it just 'virtually' displays the page
 
 ---
 
@@ -159,7 +159,7 @@ import { useParams } from "react-router-dom";
 const ItemDetails = () => {
   // `useParams` is the hook.
   // Hooks always start with `use`.
-  const { itemId } = useParams();
+  const { itemId } = useParams(); //req.params equivalent
 
   return <h3>Item ID: {itemId}</h3>;
 };

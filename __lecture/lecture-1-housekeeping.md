@@ -29,7 +29,7 @@ const items = [
 ]
 
 const Bacon = ({ items }) => (
-    {items.map(item => <li>{item.text}</li>)}
+    {items.map(item => <li key={item.id}>{item.text}</li>)}
 );
 ```
 
@@ -105,7 +105,7 @@ export const MAGIC_NUMBER = 123;
 
 ```js
 // src/index.js
-import MAGIC_NUMBER from "./data";
+import { MAGIC_NUMBER } from "./data";
 ```
 
 ---
@@ -122,7 +122,9 @@ export default data;
 
 ```js
 // src/index.js
-import { data, users } from "./data";
+import data from "./data";
+//or
+import { users, sessions } from "./data";
 ```
 
 ---
@@ -130,6 +132,8 @@ import { data, users } from "./data";
 ```js
 // src/data.js
 export default const baseball = '⚾️';
+//BREAK^^
+export default baseball = '⚾️';
 
 ```
 
