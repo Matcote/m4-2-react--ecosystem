@@ -20,7 +20,7 @@ const Header = (props) => {
   return (
     <Nav>
       <h1>Fruit Emporium</h1>
-      <Link exact to="/">
+      <Link exact="true" to="/">
         Home
       </Link>
       <Link to="/about">About</Link>

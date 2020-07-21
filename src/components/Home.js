@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import ListingGrid from "./ListingGrid";
 import { items } from "../data";
 const itemList = Object.values(items);
