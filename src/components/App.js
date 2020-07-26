@@ -4,10 +4,12 @@ import Header from "./Header";
 import Home from "./Home";
 import About from "./About";
 import ItemDetails from "./ItemDetails";
+import GlobalStyles from "./createGlobalStyle";
 
 const App = (props) => {
   return (
     <Router>
+      <GlobalStyles />
       <Header />
       <Switch>
         <Route exact={true} path="/">

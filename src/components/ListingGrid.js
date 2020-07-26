@@ -4,11 +4,19 @@ import { Link } from "react-router-dom";
 
 const FruitBox = styled.div`
   display: inline-block;
-  width: 33%;
-
+  width: 25%;
+  height: 200px;
+  border: 1px solid grey;
+  text-align: center;
+  border-radius: 15px;
+  margin: 10px;
+  line-height: 2;
   img {
+    position: relative;
+    bottom: 10px;
     height: 100px;
     width: 100px;
+    border-radius: 10px;
   }
 `;
 

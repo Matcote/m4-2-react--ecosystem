@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import ListingGrid from "./ListingGrid";
 import { items } from "../data";
 const itemList = Object.values(items);
